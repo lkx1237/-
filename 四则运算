@@ -1,0 +1,116 @@
+import random
+import fractions
+import string
+import profile
+def main():
+    i=0
+    result=0
+    temp=0
+    print("请输入想要生成的题目数量：")
+    n=input()
+    n=int(n)
+    while i<n:
+        first_num=random.randint(1,10)
+        second_num=random.randint(1,10)
+        third_num=random.randint(1,10)
+        fourth_num=random.randint(1,10)
+        a = random.choice("+-*/")
+        if second_num==1:
+            x=first_num
+        else:
+            f,s=min(first_num,second_num),max(first_num,second_num)
+            x=fractions.Fraction(f,s)
+        if fourth_num==1:
+            y=third_num
+        else:
+            assert isinstance(fourth_num, object) #判断a的数据类型是否为b，isinstance(a,b) 成立则通过，否则失败,控制分母非0条件
+            th,fo = min(third_num, fourth_num), max(third_num, fourth_num)
+            y = fractions.Fraction(th, fo)
+        if a == "+":
+            result = x + y
+            faker = str(result)
+            print(x, a, y, "=")
+        elif a == "-":
+            x1,y1=max(x,y),min(x,y)
+            result = x1 - y1
+            faker = str(result)  # 生成字符型
+            print(x1, a, y1, "=")
+        elif a == "*":
+            result = x * y
+            faker = str(result)
+            print(x, "x", y, "=")
+        elif a == "/":
+            result = x / y
+            faker = str(result)
+            print(x, "÷", y, "=")
+        answer = input()
+        if answer=='exit':
+            break
+        elif faker == answer:  # 正确
+            temp = temp + 1
+            print("right！")
+        else:  # 错误
+            print('error. the right answer is %s' % result)
+        i += 1
+    print("您答对%d题" % temp)
+    
+if __name__=="__main__":
+        profile.run("main()")
+import random
+import fractions
+import string
+import profile
+def main():
+    i=0
+    result=0
+    temp=0
+    print("请输入想要生成的题目数量：")
+    n=input()
+    n=int(n)
+    while i<n:
+        first_num=random.randint(1,10)
+        second_num=random.randint(1,10)
+        third_num=random.randint(1,10)
+        fourth_num=random.randint(1,10)
+        a = random.choice("+-*/")
+        if second_num==1:
+            x=first_num
+        else:
+            f,s=min(first_num,second_num),max(first_num,second_num)
+            x=fractions.Fraction(f,s)
+        if fourth_num==1:
+            y=third_num
+        else:
+            assert isinstance(fourth_num, object) #判断a的数据类型是否为b，isinstance(a,b) 成立则通过，否则失败,控制分母非0条件
+            th,fo = min(third_num, fourth_num), max(third_num, fourth_num)
+            y = fractions.Fraction(th, fo)
+        if a == "+":
+            result = x + y
+            faker = str(result)
+            print(x, a, y, "=")
+        elif a == "-":
+            x1,y1=max(x,y),min(x,y)
+            result = x1 - y1
+            faker = str(result)  # 生成字符型
+            print(x1, a, y1, "=")
+        elif a == "*":
+            result = x * y
+            faker = str(result)
+            print(x, "x", y, "=")
+        elif a == "/":
+            result = x / y
+            faker = str(result)
+            print(x, "÷", y, "=")
+        answer = input()
+        if answer=='exit':
+            break
+        elif faker == answer:  # 正确
+            temp = temp + 1
+            print("right！")
+        else:  # 错误
+            print('error. the right answer is %s' % result)
+        i += 1
+    print("您答对%d题" % temp)
+    
+if __name__=="__main__":
+        profile.run("main()")
